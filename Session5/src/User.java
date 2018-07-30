@@ -11,10 +11,15 @@ public class User {
 	private int age;
 	String address;
 	
+	// Attributes or Data Members or State of Class
+	// Below Attributes belongs to Class, They Do Not Belong to Object !!
+	static String companyName;
+	
 	// Methods
 	// Belongs to Objects and Not to Class !!
 	
 	// Setter Methods -> Performs write and update operation
+	// needed to access private data !!
 	void setPhone(String ph){
 		phone = ph;
 	}
@@ -30,6 +35,12 @@ public class User {
 	
 	int getAge(){
 		return age;
+	}
+	
+	// Method
+	// Belongs to Class and Not to Object !!
+	static void showCompanyName(){
+		System.out.println("Company Name is: "+companyName);
 	}
 	
 }

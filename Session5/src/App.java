@@ -1,6 +1,8 @@
 
 public class App {
 
+	// main is the method which is executed by JVM automatically
+	// Execution of Program Begins Here
 	public static void main(String[] args) {
 		
 		// Create Objects Here:
@@ -49,6 +51,31 @@ public class App {
 		System.out.println("----Reading after an update----");
 		//System.out.println(uRef1.name+" is "+uRef3.age+" years old and lives in "+uRef1.address);
 		System.out.println(uRef1.name+" is "+uRef3.getAge()+" years old and lives in "+uRef1.address);
+		
+		
+		// Property of the Class i.e. which is marked as static, shall be accessed with Class name directly !!
+		User.companyName = "ABC International !!";
+		User.showCompanyName();
+		
+		// static can be accessed by objects i.e. through their reference variables.
+		// Objects can access property of class !! class cannot access property of Object !!
+		// static acts as a common property for all the objects which we create.
+		// some sort of global data for all the objects can be marked as static which can be shared amongst them
+		
+		WhatsApp user1 = new WhatsApp();
+		WhatsApp user2 = new WhatsApp();
+		
+		user1.statusTitle = "Be Exceptional";
+		user2.statusTitle = "Work hard Get Luckier";
+		
+		user1.groupTitle = "Edureka";
+		
+		System.out.println("StatusTitle for user1 is: "+user1.statusTitle+" GroupTitle for user1 "+user1.groupTitle);
+		System.out.println("StatusTitle for user2 is: "+user2.statusTitle+" GroupTitle for user2 "+user2.groupTitle);
+		System.out.println("GroupTitle of WhatsApp Class "+WhatsApp.groupTitle);
+		
+		
+		
 	}
 
 }

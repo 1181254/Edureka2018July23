@@ -14,7 +14,7 @@ interface Inf2{
 // interfaces can inherit other interfaces and can do so in a multiple way
 // But remember, this is neither object to object, nor class to class, it is simple interface to interface
 interface Inf3 extends Inf1, Inf2{
-	
+	int i = 100;
 }
 
 class CC implements Inf3{//Inf1, Inf2{ // -> Multiple Implementation and not Multiple Inheritance

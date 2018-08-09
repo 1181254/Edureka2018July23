@@ -59,7 +59,9 @@ public class App {
 			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		}*/
 		
-		helper.executeProcedure(s1);
+		//helper.executeProcedure(s1);
+		
+		helper.processBatch();
 		
 		//5. Close the Connection
 		helper.closeConenction();

@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -188,10 +189,44 @@ public class JDBCHelper {
 			
 			System.out.println("===Procedure Executed===");
 			
-		} catch (Exception e) {
+		}catch(SQLException se){
+			System.out.println("Exception is: "+se);
+			System.out.println("Message is: "+se.getMessage());
+			System.out.println("Error Code is: "+se.getErrorCode());
+			System.out.println("State is: "+se.getSQLState());
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public void processBatch(){
+		try {
+			
+			String sql1 = "update Student set name = 'Mike Henry', age = 39 where roll = 5";
+			String sql2 = "delete from Student where rollnumber = 10";
+			
+			stmt = con.createStatement();
+			stmt.addBatch(sql1);
+			stmt.addBatch(sql2);
+			
+			con.setAutoCommit(false); // we will take care to transaction management
+			
+			stmt.executeBatch();
+			
+			con.commit(); 			  // executed as a transaction
+			
+			System.out.println("==Transaction Commited==");
+		} catch (Exception e) {
+			try {
+				con.rollback();
+				System.out.println("==Transaction RollBacked==");
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			
+			e.printStackTrace();
+		}
 	}
 	
 	public void closeConenction(){

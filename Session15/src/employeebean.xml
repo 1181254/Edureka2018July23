@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    
+   <!-- <bean id="e1" class="co.edureka.model.Employee" scope="prototype"> -->
+   <!-- <bean id="e1" class="co.edureka.model.Employee" init-method="myInit" destroy-method="myDestroy">
+       <property name="eid" value="201"/>
+       <property name="name" value="Jennie"/>
+       <property name="salary" value="60000"/>
+       <property name="email" value="jennie@example.com"/>
+       <property name="address" value="Country Homes"/>
+   </bean>
+   
+   <bean class="co.edureka.model.PostProcessor"/> -->
+   
+   <!-- <bean id="e2" class="co.edureka.model.Employee">
+       <property name="eid" value="301"/>
+       <property name="name" value="Fionna"/>
+       <property name="salary" value="65000"/>
+       <property name="email" value="fionna"/>
+       <property name="address" value="Country Homes North"/>
+   </bean> -->
+   
+   <bean id="fRef" class="co.edureka.model.Father">
+       <property name="fname" value="John"/>
+       <property name="lname" value="Watson"/>
+       <property name="wealth" value="65000"/>
+   </bean>
+   
+   <bean id="cRef" class="co.edureka.model.Child" parent="fRef">
+       <property name="fname" value="Jennie"/>
+       <property name="vehicles" value="2"/>
+       <property name="compName" value="ABC International"/>
+   </bean>
+
+</beans>

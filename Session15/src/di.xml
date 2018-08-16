@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    
+   
+   <bean id="dRef" class="co.edureka.model.Driver">
+       <property name="name" value="John"/>
+       <property name="age" value="30"/>
+       <property name="drivingLicNum" value="IN301GH11"/>
+   </bean>
+   
+   <bean id="cRef" class="co.edureka.model.Cab">
+       <property name="regNumber" value="1212"/>
+       <property name="name" value="Skoda Rapid"/>
+       <property name="color" value="Black"/>
+       <!-- <constructor-arg ref="dRef"/> --> <!-- Constructor Injection -->
+       <property name="driver" ref="dRef"/> <!-- Setter Injection -->
+       
+       <property name="passengerNames">
+	       	<list>
+	       		<value>Fionna</value>
+	       		<value>Sia</value>
+	       		<value>Mike</value>
+	       	</list>
+	       	
+	       	<!-- <set></set>
+	       	<map></map> -->
+	       	
+       </property>
+   </bean>
+
+</beans>

@@ -8,13 +8,14 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.dialect.MySQLDialect;
 
 import co.edureka.model.Employee;
 
 public class App {
 
 	public static void main(String[] args) {
-		
+				
 		/*Employee emp1 = new Employee();
 		emp1.setId(null);
 		emp1.setName("Mike");
@@ -46,6 +47,7 @@ public class App {
 			factory = config.buildSessionFactory();
 			
 			session = factory.openSession();
+			//session1 = factory.openSession();
 			
 			transaction = session.beginTransaction();
 			
@@ -83,12 +85,28 @@ public class App {
 			//session.createSQLQuery(sql);
 			
 			// 2. Criteria API
-			Criteria criteria = session.createCriteria(Employee.class);
+			/*Criteria criteria = session.createCriteria(Employee.class);
 			criteria.add(Restrictions.gt("salary", 50000)); // where salary greater than 50000
 			List<Employee> employees = criteria.list();
 			for(Employee emp : employees){
 				System.out.println(emp);
-			}
+			}*/
+			
+			
+			// Cache Example:
+			Employee emp1 = (Employee)session.get(Employee.class, 1);
+			Employee emp2 = (Employee)session.get(Employee.class, 2);
+			
+			System.out.println(emp1);
+			System.out.println(emp2);
+			
+			System.out.println("=======Re Fetching the same data=====");
+			
+			Employee emp3 = (Employee)session.get(Employee.class, 1);
+			Employee emp4 = (Employee)session.get(Employee.class, 2);
+			
+			System.out.println(emp3);
+			System.out.println(emp4);
 			
 			transaction.commit();
 			

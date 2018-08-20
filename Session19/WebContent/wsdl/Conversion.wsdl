@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://edureka.co" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://edureka.co" xmlns:intf="http://edureka.co" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://edureka.co" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="registerUser">
+    <complexType>
+     <sequence>
+      <element name="email" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="registerUserResponse">
+    <complexType>
+     <sequence>
+      <element name="registerUserReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="feetsToInches">
+    <complexType>
+     <sequence>
+      <element name="feets" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="feetsToInchesResponse">
+    <complexType>
+     <sequence>
+      <element name="feetsToInchesReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="dollarToRupee">
+    <complexType>
+     <sequence>
+      <element name="dollar" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="dollarToRupeeResponse">
+    <complexType>
+     <sequence>
+      <element name="dollarToRupeeReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="generateOTP">
+    <complexType>
+     <sequence>
+      <element name="phone" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="generateOTPResponse">
+    <complexType>
+     <sequence>
+      <element name="generateOTPReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="mtrsToCms">
+    <complexType>
+     <sequence>
+      <element name="mtrs" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="mtrsToCmsResponse">
+    <complexType>
+     <sequence>
+      <element name="mtrsToCmsReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="registerUserResponse">
+
+      <wsdl:part element="impl:registerUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="generateOTPResponse">
+
+      <wsdl:part element="impl:generateOTPResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mtrsToCmsRequest">
+
+      <wsdl:part element="impl:mtrsToCms" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="dollarToRupeeResponse">
+
+      <wsdl:part element="impl:dollarToRupeeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="generateOTPRequest">
+
+      <wsdl:part element="impl:generateOTP" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="registerUserRequest">
+
+      <wsdl:part element="impl:registerUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="dollarToRupeeRequest">
+
+      <wsdl:part element="impl:dollarToRupee" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mtrsToCmsResponse">
+
+      <wsdl:part element="impl:mtrsToCmsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="feetsToInchesRequest">
+
+      <wsdl:part element="impl:feetsToInches" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="feetsToInchesResponse">
+
+      <wsdl:part element="impl:feetsToInchesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Conversion">
+
+      <wsdl:operation name="registerUser">
+
+         <wsdl:input message="impl:registerUserRequest" name="registerUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:registerUserResponse" name="registerUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="feetsToInches">
+
+         <wsdl:input message="impl:feetsToInchesRequest" name="feetsToInchesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:feetsToInchesResponse" name="feetsToInchesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="dollarToRupee">
+
+         <wsdl:input message="impl:dollarToRupeeRequest" name="dollarToRupeeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:dollarToRupeeResponse" name="dollarToRupeeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="generateOTP">
+
+         <wsdl:input message="impl:generateOTPRequest" name="generateOTPRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:generateOTPResponse" name="generateOTPResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="mtrsToCms">
+
+         <wsdl:input message="impl:mtrsToCmsRequest" name="mtrsToCmsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:mtrsToCmsResponse" name="mtrsToCmsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ConversionSoapBinding" type="impl:Conversion">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="registerUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="registerUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="registerUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="feetsToInches">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="feetsToInchesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="feetsToInchesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="dollarToRupee">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="dollarToRupeeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="dollarToRupeeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="generateOTP">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="generateOTPRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="generateOTPResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="mtrsToCms">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="mtrsToCmsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="mtrsToCmsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ConversionService">
+
+      <wsdl:port binding="impl:ConversionSoapBinding" name="Conversion">
+
+         <wsdlsoap:address location="http://localhost:8080/Session19/services/Conversion"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
